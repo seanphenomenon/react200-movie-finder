@@ -1,11 +1,13 @@
 import React from 'react';
 import {HashRouter as Router,Route} from 'react-router-dom';
-import MovieSearchContainer from './containers';
+import MovieSearchContainer from './containers/MovieSearchContainer';
 import MovieDetailContainer from './containers/MovieDetailContainer';
 
 
 export default class App extends React.Component {
+
   render() {
+
     return (
       <div>
         <h1 className='text-center' id='header'>Movie Finder</h1>

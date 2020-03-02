@@ -1,8 +1,6 @@
 import React from 'react';
 import { updateMovieInput, getMovie, getMovieDetails} from './searchActions';
 import { NavLink } from 'react-router-dom';
-import SearchReducer from './searchReducer';
-// import { connect } from "react-redux";
 
  export default class MovieSearchContainer extends React.Component {
   constructor(props) {
@@ -11,6 +9,7 @@ import SearchReducer from './searchReducer';
 
     this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    // this.handleDetails=this.handleDetails.bind(this);
   }
 
 
@@ -28,12 +27,14 @@ import SearchReducer from './searchReducer';
     console.log(input)
   }
 
-  handleDetails(){
-    event.preventDefault();
-    const {input, dispatch} = this.props;
-    dispatch(getMovieDetals(input));
-    console.log(input)
-  }
+  // handleDetails(imdbID){
+
+  //   event.preventDefault();
+  //   const {input, dispatch} = this.props;
+  //   console.log(imdbID)
+  //   dispatch(getMovieDetails(imdbID));
+
+  // }
 
   render() {
 // these values were also provided by connect()
@@ -64,15 +65,16 @@ import SearchReducer from './searchReducer';
           <div className="card mb-3" key={i}>
             <div className="row no-gutters">
               <div className="col-md-4">
-              <img src={`${movies.Poster}`} width="100%"/>
+              <img src={`${movies.Poster}`} width="75%"/>
               </div>
               <div className="col-md-8">
                 <div className="card-body">
                   <h5 className="card-title">{`${movies.Title}`}</h5>
                   <h6>{`${movies.Year}`}</h6>
                   <hr />
-                  <NavLink to='/movie/'>
-                    <button className='btn btn-info flex-right' type='button'onClick={this.handleDetails}>More Information</button>
+                  <NavLink to={`/movie/${movies.imdbID}`}>
+                    <button className='btn btn-info flex-right' type='button'>More Information</button>
+                    {/* onClick={() => this.handleDetails(movies.imdbID) */}
                   </NavLink>
                 </div>
               </div>
@@ -90,6 +92,5 @@ import SearchReducer from './searchReducer';
 
 
 
-// export default connect (mapStateToProps)(MovieSearchContainer)
 
 

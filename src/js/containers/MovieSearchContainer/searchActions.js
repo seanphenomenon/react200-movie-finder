@@ -5,11 +5,11 @@ export function updateMovieInput(input) {
 
   return {
     type: 'UPDATE_MOVIE_INPUT',
-    payload: {input}
+    payload: { input }
   };
 }
 
-export function getMovie(title){
+export function getMovie(title) {
 
   return {
     type: 'GET_MOVIE',
@@ -17,7 +17,7 @@ export function getMovie(title){
   };
 }
 
-export function getMovieDetails(id){
+export function getMovieDetails(id) {
   return {
     type: 'GET_MOVIE_DETAILS',
     payload: axios.get(`/movie/${id}`)

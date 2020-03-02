@@ -1,8 +1,8 @@
 
 const defaultState = {
   input: '',
-  movies:[],
-  movieDetails:[],
+  movies: [],
+  movieDetails: [],
 };
 
 
@@ -28,8 +28,6 @@ export default function SearchReducer(state = defaultState, action) {
       return {
         ...state,
         movies: payload.data.Search,
-
-
       };
     }
 
@@ -37,8 +35,9 @@ export default function SearchReducer(state = defaultState, action) {
     case "GET_MOVIE_DETAILS_FULFILLED": {
       return {
         ...state,
-        //   movie details key is for default state above.
-        movieDetails: payload.data
+        // movie details key is used for default state above. Originally had array brackets around payload.data to get data to show and prevent null return in redux state.
+        // removed array brackets from payload.data to get props to show on detail container.
+        movieDetails: payload.data,
       };
     }
 
