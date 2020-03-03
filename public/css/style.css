@@ -1,0 +1,34 @@
+body {
+background: #232526;
+background: -webkit-linear-gradient(to right, #414345, #232526);
+background: linear-gradient(to right, #414345, #232526);
+}
+
+#header{
+  color:  red;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#container-name{
+  color:white;
+}
+
+#search-button{
+  color:white;
+  font-weight: bold;
+}
+#search-icon{
+   position: relative;
+    z-index: 1;
+    left: -25px;
+    top: 10px;
+    color: #7B7B7B;
+    cursor:pointer;
+    width: 0;
+}
+
+#line-break{
+  color: white;
+}
+
