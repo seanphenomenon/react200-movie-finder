@@ -9,7 +9,6 @@ import { NavLink } from 'react-router-dom';
 
     this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    // this.handleDetails=this.handleDetails.bind(this);
   }
 
 
@@ -27,14 +26,6 @@ import { NavLink } from 'react-router-dom';
     console.log(input)
   }
 
-  // handleDetails(imdbID){
-
-  //   event.preventDefault();
-  //   const {input, dispatch} = this.props;
-  //   console.log(imdbID)
-  //   dispatch(getMovieDetails(imdbID));
-
-  // }
 
   render() {
 // these values were also provided by connect()
@@ -42,12 +33,11 @@ import { NavLink } from 'react-router-dom';
 
     return (
       <div>
-        <h1 id='container-name'>Movie Search Container</h1>
         <div className="container-fluid">
           <div className='row'>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
-                <button className="btn btn-outline-secondary" type="button" id='search-button' onClick={this.handleClick}>Search Movie</button>
+                <button className="btn btn-outline-dark" type="button" id='search-button' onClick={this.handleClick}>Search</button>
               </div>
 
               <input type="text"
@@ -73,8 +63,7 @@ import { NavLink } from 'react-router-dom';
                   <h6>{`${movies.Year}`}</h6>
                   <hr />
                   <NavLink to={`/movie/${movies.imdbID}`}>
-                    <button className='btn btn-info flex-right' type='button'>More Information</button>
-                    {/* onClick={() => this.handleDetails(movies.imdbID) */}
+                    <button className='btn btn-dark flex-right' type='button'>More Information</button>
                   </NavLink>
                 </div>
               </div>

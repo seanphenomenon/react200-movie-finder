@@ -9,7 +9,7 @@ export default class MovieDetailContainer extends React.Component {
     super(props);
   }
 
-  // using componentDidMount here to make moviedetails axios call upon arrival instead of calling from "more information" button in search container.
+    // using componentDidMount here to make moviedetails axios call upon arrival instead of calling from "more information" button in search container.
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(getMovieDetails(this.props.match.params.id));
@@ -22,10 +22,9 @@ export default class MovieDetailContainer extends React.Component {
 
     return (
       <div>
-        <h1 id='container-name'>Movie Detail Container</h1>
         <div className="row">
           <NavLink to='/'>
-            <button className="btn btn-info" type='button'>Go Back</button>
+            <button className="btn btn-dark" type='button'>Go Back</button>
           </NavLink>
           <br></br>
           <br></br>
