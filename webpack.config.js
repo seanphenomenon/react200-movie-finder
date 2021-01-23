@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    javascript: './js/index'
+    javascript: './js/index',
   },
 
   output: {
@@ -15,9 +15,9 @@ module.exports = {
 
   resolve: {
     alias: {
-      react: path.join(__dirname, 'node_modules', 'react')
+      react: path.join(__dirname, 'node_modules', 'react'),
     },
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
 
   module: {

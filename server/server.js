@@ -12,17 +12,18 @@ app.use(express.static('public'));
 
 app.get('/movies/:title', (req, res) => {
   movieTitle = req.params.title;
-  axios.get(`http://www.omdbapi.com/?apikey=3119abb3&s=${req.params.title}`)
-    .then(response => res.send(response.data))
-    .catch(err => console.log(err))
+  axios
+    .get(`http://www.omdbapi.com/?apikey=3119abb3&s=${req.params.title}`)
+    .then((response) => res.send(response.data))
+    .catch((err) => console.log(err));
 });
 
 app.get('/movie/:id', (req, res) => {
   movieId = req.params.id;
-  axios.get(`http://www.omdbapi.com/?apikey=3119abb3&i=${req.params.id}`)
-    .then(response => res.send(response.data))
-    .catch(err => console.log(err))
+  axios
+    .get(`http://www.omdbapi.com/?apikey=3119abb3&i=${req.params.id}`)
+    .then((response) => res.send(response.data))
+    .catch((err) => console.log(err));
 });
 
 module.exports = app;
-

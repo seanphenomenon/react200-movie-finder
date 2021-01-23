@@ -9,7 +9,7 @@ export default class MovieDetailContainer extends React.Component {
     super(props);
   }
 
-    // using componentDidMount here to make moviedetails axios call upon arrival instead of calling from "more information" button in search container.
+  // using componentDidMount here to make moviedetails axios call upon arrival instead of calling from "more information" button in search container.
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(getMovieDetails(this.props.match.params.id));
@@ -18,44 +18,49 @@ export default class MovieDetailContainer extends React.Component {
   render() {
     const { movieDetails } = this.props;
     // movieDetails props being called/used from searchContainer here
-    console.log(movieDetails)
+    console.log(movieDetails);
 
     return (
       <div>
-        <div className="row">
-          <NavLink to='/'>
-            <button className="btn btn-dark" type='button'>Go Back</button>
-          </NavLink>
-          <br></br>
-          <br></br>
-          <hr />
-        </div>
+        <h1> Movie Finder</h1>
+        <div className="container">
+          <div className="row">
+            <NavLink to="/">
+              <button className="btn btn-info" id="back-button" type="button">
+                Go Back
+              </button>
+            </NavLink>
+            <br></br>
+            <br></br>
+            <hr />
+          </div>
 
-        <div className="row">
-          <div className='col-md-6'>
-            <div className='card'>
-              <div className='card-body'>
-                <img src={movieDetails.Poster} width='100%' />
+          <div className="row">
+            <div className="col-md-6">
+              <div className="card">
+                <div className="card-body">
+                  <img src={movieDetails.Poster} width="100%" />
+                </div>
               </div>
             </div>
-          </div>
-          <div className='col-md-6'>
-            <div className='card'>
-              <div className='card-header'>
-                <h4>{`${movieDetails.Title}`}</h4>
-                <hr />
-                <span className="badge badge-success">GENRE</span>
+            <div className="col-md-6">
+              <div className="card">
+                <div className="card-header">
+                  <h4>{`${movieDetails.Title}`}</h4>
+                  <hr />
+                  <span className="badge badge-success">GENRE</span>
                   <p>{`${movieDetails.Genre}`}</p>
-                      <span className="badge badge-danger">RATED</span>
+                  <span className="badge badge-danger">RATED</span>
                   <p>{`${movieDetails.Rated}`}</p>
                   <span className="badge badge-info">RUNTIME</span>
                   <p>{`${movieDetails.Runtime}`}</p>
                   <span class="badge badge-warning">IMDB</span>
                   <p>{`${movieDetails.imdbRating}`}</p>
-                <hr />
+                  <hr />
 
-                <div className='card-body'>
-                  <p style={{fontSize:20}}>{`${movieDetails.Plot}`}</p>
+                  <div className="card-body">
+                    <p>{`${movieDetails.Plot}`}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -65,5 +70,3 @@ export default class MovieDetailContainer extends React.Component {
     );
   }
 }
-
-

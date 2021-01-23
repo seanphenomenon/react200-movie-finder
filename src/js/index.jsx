@@ -3,18 +3,16 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
-import rootReducer from "./rootReducer";
+import rootReducer from './rootReducer';
 import App from './app';
-
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // middleware listens to all actions
-const store = createStore(rootReducer, composeEnhancers(
-  applyMiddleware(
-    promiseMiddleware()
-  )
-));
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(promiseMiddleware()))
+);
 
 render(
   <Provider store={store}>
@@ -22,5 +20,3 @@ render(
   </Provider>,
   document.getElementById('root')
 );
-
-

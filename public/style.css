@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: black;
+  font-family: 'Varela';
+}
+
+.container {
+  padding: 2rem;
+  background-color: black;
+  width: 100vw;
+  min-height: 100%;
+  margin: 0 auto;
+  z-index: 99;
+}
+h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Varela';
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.container-fluid {
+  border: 2px solid black;
+  align-items: center;
+  padding: 2rem;
+  background-color: black;
+}
+
+.button {
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.btn:active {
+  border: none;
+  box-shadow: none;
+}
+
+#search-icon {
+  position: relative;
+  z-index: 1;
+  left: -30px;
+  top: 8px;
+  color: #7b7b7b;
+  cursor: pointer;
+  width: 0;
+}
+#line-break {
+  color: white;
+}
+/*--- Movie Details -- */
+
+#back-button {
+  margin-left: 15px;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+.card {
+  background-color: #b2bec3;
+  padding: 20px;
+  border-radius: 20px;
+}
+.card-body {
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+.card-body h5 {
+  font-weight: 700;
+}
+.card-body p {
+  padding: 0;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    margin: 10px;
+  }
+  .container {
+    text-align: center;
+  }
+  .card-body {
+    margin-top: 20px;
+  }
+}
